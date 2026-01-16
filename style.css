@@ -1,0 +1,209 @@
+:root {
+    --bg: #0b0f17;
+    --card: rgba(255, 255, 255, 0.06);
+    --card-border: rgba(255, 255, 255, 0.12);
+    --text: rgba(255, 255, 255, 0.92);
+    --muted: rgba(255, 255, 255, 0.72);
+    --muter: rgba(255, 255, 255, 0.55);
+    --accent: #7dd3fc;
+    /* light blue */
+    --accent2: #a78bfa;
+    /* purple */
+    --shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+    --radius: 18px;
+    --maxw: 980px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+        Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    color: var(--text);
+    background: radial-gradient(1200px 600px at 20% 0%,
+            rgba(125, 211, 252, 0.18),
+            transparent 60%),
+        radial-gradient(900px 500px at 85% 15%,
+            rgba(167, 139, 250, 0.18),
+            transparent 55%),
+        var(--bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    width: 100%;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 64px 20px 36px;
+    flex: 1;
+}
+
+.hero {
+    text-align: center;
+    padding: 36px 24px;
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.04));
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(1.65rem, 3.2vw, 2.55rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    margin: 18px auto 0;
+    max-width: 90ch;
+    color: var(--muted);
+    font-size: clamp(1.02rem, 1.6vw, 1.15rem);
+    line-height: 1.55;
+    text-align: justify;
+}
+
+.section {
+    margin-top: 28px;
+    padding: 28px 24px;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+}
+
+.section h2 {
+    margin: 0 0 14px;
+    text-align: center;
+    font-size: 1.25rem;
+    letter-spacing: 0.02em;
+}
+
+.abstract {
+    margin: 0 auto;
+    max-width: 92ch;
+    /* readable line length */
+    text-align: justify;
+    /* block aligned */
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 1.03rem;
+}
+
+.cta {
+    margin-top: 22px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: linear-gradient(90deg,
+            rgba(125, 211, 252, 0.22),
+            rgba(167, 139, 250, 0.22));
+    color: var(--text);
+    transition: transform 0.15s ease, border-color 0.15s ease,
+        background 0.15s ease;
+}
+
+.button:hover {
+    transform: translateY(-1px);
+    border-color: rgba(255, 255, 255, 0.32);
+    background: linear-gradient(90deg,
+            rgba(125, 211, 252, 0.28),
+            rgba(167, 139, 250, 0.28));
+}
+
+.button:active {
+    transform: translateY(0px);
+}
+
+.button svg {
+    width: 18px;
+    height: 18px;
+    opacity: 0.9;
+}
+
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+}
+
+.icon-link:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.25);
+}
+
+.icon-link svg {
+  width: 18px;
+  height: 18px;
+  opacity: 0.9;
+}
+
+footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 22px 20px;
+    color: var(--muter);
+}
+
+.footer-inner {
+    width: 100%;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.footer-links {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+}
+
+.footer-links a:hover {
+    border-bottom-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Small screens */
+@media (max-width: 520px) {
+    main {
+        padding-top: 40px;
+    }
+
+    .hero {
+        padding: 28px 18px;
+    }
+}
