@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+/* Use class-based dark mode: <html class="dark"> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 
+  Regular CSS variables.
+  These control the actual light/dark values.
+*/
+:root {
+  --background: #fafafa;
+  --foreground: #18181b;
+
+  --surface: #ffffff;
+  --surface-muted: #f4f4f5;
+
+  --border: #e4e4e7;
+  --border-strong: #d4d4d8;
+
+  --muted: #71717a;
+  --muted-foreground: #52525b;
+
+  --accent: #27272a;
+  --accent-foreground: #ffffff;
+
+  --ring: #a1a1aa;
+}
+
+.dark {
+  --background: #09090b;
+  --foreground: #fafafa;
+
+  --surface: #18181b;
+  --surface-muted: #27272a;
+
+  --border: #3f3f46;
+  --border-strong: #52525b;
+
+  --muted: #a1a1aa;
+  --muted-foreground: #d4d4d8;
+
+  --accent: #ffffff;
+  --accent-foreground: #09090b;
+
+  --ring: #71717a;
+}
+
+/*
+  Tailwind v4 theme tokens.
+  These create utilities like:
+  bg-background, text-foreground, bg-surface, border-border, shadow-card, font-sans, etc.
+*/
+@theme inline {
+  --font-sans:
+    "Geist Variable", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --font-mono:
+    "Geist Mono Variable", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-ring: var(--ring);
+
+  --radius-card: 1rem;
+  --radius-button: 9999px;
+
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.04);
+  --shadow-card-hover: 0 8px 30px rgb(0 0 0 / 0.06);
+
+  --ease-portfolio: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-fade-up: fade-up 500ms var(--ease-portfolio) both;
+
+  @keyframes fade-up {
+    0% {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Base website feel */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  p {
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  ::selection {
+    @apply bg-foreground text-background;
+  }
+}
