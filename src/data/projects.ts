@@ -4,16 +4,17 @@ export type Project = {
   description: string;
   image: string;
   href: string;
+  document?: string;
   tags?: string[];
   buttonLabel?: string;
-  featured?: boolean;
-  content?: string[];
+  featured: boolean;
+  content: string[];
 };
 
 
 export const projects: Project[] = [
   {
-    title: "Clinician Trust Framework for RAG Assistants",
+    title: "Enhancing Clinician Trust through a Trust-Enabling Framework for Clinical RAG-Based LLM Assistants interfacing with Internal Healthcare Protocols",
     description:
       "A trust-enabling framework around a clinical RAG-based LLM assistant, focused on transparency, traceability, monitoring, human oversight, and safer use in healthcare contexts.",
     content: [
@@ -27,8 +28,9 @@ export const projects: Project[] = [
     ],
     image: "/images/projects/clinical-rag-framework.png",
     href: "/projects/clinical-rag-framework",
+    document: "/files/projects/clinician-trust-framework.pdf",
     tags: ["AI", "RAG", "Healthcare", "Trust"],
-    buttonLabel: "View project",
+    buttonLabel: "Read more",
     featured: true,
   },
 //   {

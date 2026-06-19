@@ -1,6 +1,7 @@
 import { useParams } from "react-router";
 import { projects } from "../data/projects";
 import { BackLink } from "../components/BackLink";
+import { PdfViewer } from "../components/PdfViewer";
 
 export default function ProjectDetailPage() {
     const { slug } = useParams();
@@ -60,6 +61,10 @@ export default function ProjectDetailPage() {
                         <p key={paragraph}>{paragraph}</p>
                     ))}
                 </div>
+            )}
+
+            {project.document && (
+                <PdfViewer src={project.document} title={`${project.title} document`} />
             )}
         </article>
     );
